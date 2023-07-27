@@ -2,8 +2,6 @@
 export default function Authenticate() {
       const [successMessage, setSuccessMessage] = useState(null);
       const [error, setError] = useState(null);
-      const token = (props) => {
-        return <div className= {props.token}></div>
       async function handleClick() {
         try {
             const response = await fetch('https://fsa-jwt-practice.herokuapp.com/authenticate',
@@ -29,7 +27,7 @@ export default function Authenticate() {
           <button onClick={handleClick}>Authenticate Token!</button>
           
         </div>
+        
       );
     }
-}
-}
+};
