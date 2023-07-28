@@ -2,6 +2,7 @@ import React from "react";
 import Authenticate from "./components/authenticate";
 import SignUpForm from "./components/signupform";
 import { useState } from "react";
+import './App.css';
 
 
 export default function App() {

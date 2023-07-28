@@ -1,33 +1,32 @@
-import { useState } from "react";
+import { useState } from 'react';
+
+
 
 export default function SignUpForm() {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] =useState ("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
-
-  async function handleSubmit(event) {
-    setToken(result.token);
-    event.preventDefault();
-    console.log(token);
+  const [error, setError] = useState(null)
+  async function handleSubmit() {
+    e.preventDefault();
     try {
-      const response = await fetch("https://fsa-jwt-practice.herokuapp.com/signup",
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          Username:"",
-          Password: "",
-        })
-      }
+      const response = await fetch('https://fsa-jwt-practice.herokuapp.com/signup',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+      body: JSON.stringify({
+            Username: "",
+            Password: "",
+          })
+        }
       );
+
       const result = await response.json();
-      console.log(result);
+      console.log(result)
     } catch (error) {
-      setError(error.message);
+      setError(error.message)
     }
-  
     return (
       <>
         <h2>Sign Up</h2>
@@ -52,5 +51,5 @@ export default function SignUpForm() {
         </form>
       </>
     );
-    }
   }
+}
